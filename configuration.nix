@@ -365,6 +365,7 @@ in
       
       '';
     };
+    programs.swaylock.enable = true;
     programs.mako.enable = true;
     programs.alacritty = {
       enable = true;
