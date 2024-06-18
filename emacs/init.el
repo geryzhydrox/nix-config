@@ -186,7 +186,7 @@
 (dashboard-setup-startup-hook)
 (setq dashboard-startup-banner 
       ;; '("/home/gerald/Pictures/nix-snowflake-small.png" . "/home/gerald/Pictures/nix-snowflake-small.txt"))
-      "/etc/nixos/assets/nix-snowflake-small.txt")
+      "/etc/nixos/assets/nix-snowflake-small")
 (setq dashboard-center-content t)
 (setq dashboard-display-icons-p t)
 (setq dashboard-icon-type 'nerd-icons)
