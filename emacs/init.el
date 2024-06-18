@@ -5,8 +5,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
-(set-face-attribute 'defaut nil :height 140)
-
+;; (set-face-attribute 'defaut nil :height 140)
 (defun meow-append-eol ()
   (interactive)
   (end-of-line)
