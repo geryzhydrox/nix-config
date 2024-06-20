@@ -15,21 +15,13 @@
   };
 
   outputs = { self, nixpkgs,  ... }@inputs: {
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ({pkgs, ...}: {
-            imports = [
-              ./configuration.nix
-              ./hosts/desktop.nix
-              inputs.stylix.nixosModules.stylix
-              inputs.home-manager.nixosModules.default
-            ];
-          })
-        ];
-      };
+    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./configuration.nix
+        inputs.stylix.nixosModules.stylix
+        inputs.home-manager.nixosModules.default
+      ];
     };
   };
 }

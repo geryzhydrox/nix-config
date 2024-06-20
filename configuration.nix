@@ -3,39 +3,18 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, lib, ... }:
-let 
-  #nixvim = import (builtins.fetchGit {
-    #url = "https://github.com/nix-community/nixvim";
-    #ref = "nixos-23.11";
-    #});
-  # home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz";
-  # stylix = pkgs.fetchFromGithub {
-  #   owner = "danth";
-  #   repo = "stylix";
-  #   rev = "...";
-  #   sha256 = "...";
-  # };
-  # stylix = builtins.fetchGit {
-  #   url = "https://github.com/danth/stylix";
-  # };
-in
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   imports =
-    [ # Include the results of the hardware scan.
-      # (import stylix).homeManagerModules.stylix
-      ./hardware-configuration.nix
-      # inputs.home-manager.nixosModules.default
-      # (import "${home-manager}/nixos")
-      # nixvim.nixosModules.nixvim
+    [ 
       ./emacs/emacs.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  networking.hostName = "nixos-desktop"; # Define your hostname.
+  # networking.hostName = "nixos-desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
