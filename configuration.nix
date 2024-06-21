@@ -136,7 +136,7 @@
       feh
       sway-launcher-desktop
       unzip
-      thunar
+      xfce.thunar
       picom
       git
       ripgrep
