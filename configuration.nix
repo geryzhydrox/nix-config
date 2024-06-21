@@ -136,6 +136,7 @@
       feh
       sway-launcher-desktop
       unzip
+      thunar
       picom
       git
       ripgrep
