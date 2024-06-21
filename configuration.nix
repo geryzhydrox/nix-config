@@ -158,6 +158,7 @@
       cura
       pandoc
       zathura
+      pdftk
       #texliveSmall
       texliveFull
       libreoffice-fresh
