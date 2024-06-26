@@ -214,7 +214,7 @@
       targets.gtk.enable = true;
       base16Scheme = {
         base00 = "170c04";
-        base01 = "330000";
+        base01 = "200b00";
         base02 = "2f1f13";
         base03 = "b36624";
         base04 = "eab15e";
