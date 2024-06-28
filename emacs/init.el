@@ -29,6 +29,22 @@
    ("f" "File" ffap)
    ("d" "Definition" xref-find-definitions)])
 
+(make-variable-buffer-local
+ (defvar writing-mode nil
+   "Toggle writing mode."))
+
+(add-to-list 'minor-mode-alist '(writing-mode "writing"))
+(defun writing-mode (&optional ARG)
+  (interactive (list 'toggle))
+  (setq writing-mode
+	(if (eq ARG 'toggle)
+		(not writing-mode)
+	  (> ARG 0)))
+  (if writing-mode
+      `(,(olivetti-mode 1) ,(global-display-line-numbers-mode -1))
+    `(,(olivetti-mode -1) ,(global-display-line-numbers-mode 1))))
+	
+	       
 (defun meow-setup ()
   (defun meow-insert-bol ()
     (interactive)
@@ -227,6 +243,7 @@
 ;; (use-package flymake
 ;;  :hook (elixir-mode . flymake-mode))
 (require 'olivetti)
+(olivetti-set-width 85)
 (require 'org)
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 (org-babel-do-load-languages
