@@ -25,7 +25,7 @@
         epkgs.nerd-icons
         
         # Document authoring
-        epkgs.olivetti-mode
+        epkgs.olivetti
         epkgs.el-easydraw
         epkgs.sketch-mode
         epkgs.pdf-tools
