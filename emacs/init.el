@@ -244,9 +244,9 @@
 ;;  :hook (elixir-mode . flymake-mode))
 (require 'olivetti)
 (olivetti-set-width 85)
-(set-face-attribute 'org-table nil :inherit 'fixed-pitch)
 (require 'org)
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+(set-face-attribute 'org-table nil :inherit 'fixed-pitch)
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
