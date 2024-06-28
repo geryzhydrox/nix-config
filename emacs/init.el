@@ -226,6 +226,7 @@
 ;;  :hook (elixir-mode . yas-minor-mode))
 ;; (use-package flymake
 ;;  :hook (elixir-mode . flymake-mode))
+(require 'olivetti)
 (require 'org)
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 (org-babel-do-load-languages
