@@ -41,8 +41,8 @@
 		(not writing-mode)
 	  (> ARG 0)))
   (if writing-mode
-      `(,(olivetti-mode 1) ,(global-display-line-numbers-mode -1))
-    `(,(olivetti-mode -1) ,(global-display-line-numbers-mode 1))))
+      `(,(olivetti-mode 1) ,(global-display-line-numbers-mode -1) ,(variable-pitch-mode 1))
+      `(,(olivetti-mode -1) ,(global-display-line-numbers-mode 1) ,(variable-pitch-mode -1))))
 	
 	       
 (defun meow-setup ()
