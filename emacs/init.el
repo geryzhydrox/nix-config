@@ -7,6 +7,8 @@
 (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
 ;; (set-face-attribute 'defaut nil :height 140)
 
+(require 'doom-modeline)
+(doom-modeline-mode 1)
 (defun meow-append-eol ()
   (interactive)
   (end-of-line)

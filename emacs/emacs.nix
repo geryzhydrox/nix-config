@@ -10,7 +10,8 @@
       package = pkgs.emacs29-pgtk;
       extraPackages = epkgs: [
         epkgs.use-package
-        epkgs.meow 
+        epkgs.meow
+        epkgs.doom-modeline
         epkgs.nord-theme
         epkgs.ef-themes
         epkgs.base16-theme
