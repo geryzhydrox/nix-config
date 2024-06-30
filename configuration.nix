@@ -439,11 +439,11 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  #programs.steam = {
-    #enable = true;
-    #remotePlay.openFirewall = true;
-    #dedicatedServer.openFirewall = true;
-  #};
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
 
   # List services that you want to enable:
 
