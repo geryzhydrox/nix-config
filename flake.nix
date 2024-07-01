@@ -1,3 +1,4 @@
+
 {
   description = "Nixos config flake";
 
@@ -24,6 +25,20 @@
             imports = [
               ./configuration.nix
               ./hosts/desktop.nix
+              inputs.stylix.nixosModules.stylix
+              inputs.home-manager.nixosModules.default
+            ];
+          })
+        ];
+      };
+      laptop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ({pkgs, ...}: {
+            imports = [
+              ./configuration.nix
+              ./hosts/laptop.nix
               inputs.stylix.nixosModules.stylix
               inputs.home-manager.nixosModules.default
             ];
