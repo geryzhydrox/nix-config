@@ -165,6 +165,7 @@
 
       # Development
       godot_4
+      arduino
       customR
       elixir
       elixir-ls
