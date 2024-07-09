@@ -120,6 +120,9 @@
       tidyverse
       psych
     ];};
+    testScript = writeShellScriptBin "testScript" ''
+    echo "test"
+    ''
     in
     [
       # Essentials: Browser, editor, terminal, WM, etc.
@@ -153,6 +156,7 @@
       lf
       fzf
       srm
+      testScript
 
       # Productivity or whatever
       cura
