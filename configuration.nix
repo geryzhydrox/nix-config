@@ -122,7 +122,7 @@
     ];};
     testScript = writeShellScriptBin "testScript" ''
     echo "test"
-    ''
+    '';
     in
     [
       # Essentials: Browser, editor, terminal, WM, etc.
