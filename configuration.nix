@@ -183,8 +183,9 @@
       lf
       fzf
       srm
-      testScript
-
+      sync_from_usb
+      sync_to_usb
+      
       # Productivity or whatever
       cura
       pandoc
