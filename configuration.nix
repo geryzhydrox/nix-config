@@ -183,8 +183,8 @@
       lf
       fzf
       srm
-      sync_from_usb
-      sync_to_usb
+      sync-from-usb
+      sync-to-usb
       
       # Productivity or whatever
       cura
