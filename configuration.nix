@@ -120,9 +120,36 @@
       tidyverse
       psych
     ];};
-    testScript = writeShellScriptBin "testScript" ''
-    echo "test"
+    
+    # testScript = writeShellScriptBin "testScript" ''
+    # echo "test"
+    # '';
+    
+    sync_from_usb = ''
+    mount UUID="3398-681E" /home/gerald/usb/
+    rm -r /home/gerald/Documents/sync/
+    cp -r -t /home/gerald/Documents/ /home/gerald/usb/sync/ 
+    chown -R gerald /home/gerald/Documents/sync/
     '';
+    
+    sync_to_usb = ''
+    rm -r /home/gerald/usb/sync/
+    cp -r -t /home/gerald/usb/ /home/gerald/Documents/sync/
+    eject UUID="3398-681E" 
+    '';
+    
+    # nixrecfg = ''
+    # cd /etc/nixos
+    # remote=$(git remote)
+    # branch=$(git branch --show-current)
+    # flake_identifier="desktop"
+    # # IMPORTANT: This is HOST-SPECIFIC! Change to "laptop" when running this on laptop, or anything else according to host name and hostname.nix
+    # git add *
+    # read -p "Commit message: " commit_message
+    # git commit -m "${commit_message}"
+    # git push $remote $branch
+    # sudo nixos-rebuild switch --flake "/etc/nixos#${flake_identifier}"
+    # '';
     in
     [
       # Essentials: Browser, editor, terminal, WM, etc.

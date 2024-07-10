@@ -17,9 +17,12 @@
 
   outputs = { self, nixpkgs,  ... }@inputs: {
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
+      nixos-desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          flakeIdentifier = "desktop";
+        };
         modules = [
           ({pkgs, ...}: {
             imports = [
@@ -31,9 +34,12 @@
           })
         ];
       };
-      laptop = nixpkgs.lib.nixosSystem {
+      nixos-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          flakeIdentifier = "laptop";
+        };
         modules = [
           ({pkgs, ...}: {
             imports = [
