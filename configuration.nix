@@ -125,14 +125,14 @@
     # echo "test"
     # '';
     
-    sync_from_usb = ''
+    sync_from_usb = writeShellScriptBin ''
     mount UUID="3398-681E" /home/gerald/usb/
     rm -r /home/gerald/Documents/sync/
     cp -r -t /home/gerald/Documents/ /home/gerald/usb/sync/ 
     chown -R gerald /home/gerald/Documents/sync/
     '';
     
-    sync_to_usb = ''
+    sync_to_usb = writeShellScriptBin ''
     rm -r /home/gerald/usb/sync/
     cp -r -t /home/gerald/usb/ /home/gerald/Documents/sync/
     eject UUID="3398-681E" 

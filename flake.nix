@@ -19,10 +19,7 @@
     nixosConfigurations = {
       nixos-desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs;
-          flakeIdentifier = "desktop";
-        };
+        specialArgs = {inherit inputs;};
         modules = [
           ({pkgs, ...}: {
             imports = [
@@ -36,10 +33,7 @@
       };
       nixos-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs;
-          flakeIdentifier = "laptop";
-        };
+        specialArgs = {inherit inputs;};
         modules = [
           ({pkgs, ...}: {
             imports = [
