@@ -16,6 +16,7 @@
         epkgs.sudo-edit 
         epkgs.dashboard
         epkgs.transient
+        epkgs.frames-only-mode
         epkgs.magit 
 
         # Themes and look
