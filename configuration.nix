@@ -141,7 +141,6 @@
     cd /etc/nixos
     remote=$(git remote)
     branch=$(git branch --show-current)
-    # IMPORTANT: This is HOST-SPECIFIC! Change to "laptop" when running this on laptop, or anything else according to host name and hostname.nix
     git add *
     read -p "Commit message: " commit_message
     git commit -m "${commit_message}"
@@ -189,6 +188,7 @@
       pandoc
       zathura
       pdftk
+      ghostscript
       #texliveSmall
       texliveFull
       libreoffice-fresh
